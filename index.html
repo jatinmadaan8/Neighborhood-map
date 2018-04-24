@@ -1,0 +1,43 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>Neighbourhood map</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/knockout.js"></script>
+    <!--google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+</head>
+<body>
+  <div id="block_container">
+  <div id="icon">
+  <span style="font-size:35px;cursor:pointer" onclick="openNav()">&#9776;</span>
+  </div>
+  <div id="name">
+    <h3>Neighborhood Map</h3>
+  </div>
+  </div>
+   <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="form-group">
+        <input class = "form-control" placeholder = "Search" data-bind = "value: userInput, valueUpdate: 'keyup'">
+    </div>
+    <ul data-bind="foreach: filteredList">
+        <li class="list">
+            <a href="#" class="listitem" data-bind="text:name,click: $parent.locationClicked"></a>
+        </li>
+    </ul>
+  </div>
+  <div class="map" id="map">
+
+<script src="js/main.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcJ9xVbXcDXA9j3Gh9uWZwMFTfAbAtb3M&v=3&callback=initMap" onerror="googleError()">
+
+    </script>
+    </body>
+
+</html>
